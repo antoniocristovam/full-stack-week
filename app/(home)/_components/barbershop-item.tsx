@@ -3,8 +3,8 @@
 import { Card, CardContent } from "@/app/components/ui/card";
 import React from "react";
 
-import { Barbershop } from "@prisma/client";
 import Image from "next/image";
+import { Barbershop } from "@prisma/client";
 import { Button } from "@/app/components/ui/button";
 import { Badge } from "@/app/components/ui/badge";
 import { StarIcon } from "lucide-react";
