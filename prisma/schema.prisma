@@ -14,20 +14,9 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(cuid())
-  name          String?
-  email         String?   @unique
-  emailVerified DateTime?
-  image         String?
-  bookings      Booking[]
-}
-
-model VerificationToken {
-  identifier String
-  token      String   @unique
-  expires    DateTime
-
-  @@unique([identifier, token])
+  id      String    @id @default(cuid())
+  name    String
+  booking Booking[]
 }
 
 model Barbershop {
@@ -39,24 +28,25 @@ model Barbershop {
   services Service[]
 }
 
-model Booking {
-  id           String     @id @default(uuid())
-  barbershopId String
-  barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
-  serviceId    String
-  service      Service    @relation(fields: [serviceId], references: [id])
-  userId       String
-  user         User       @relation(fields: [userId], references: [id])
-  date         DateTime   @db.Timestamp
-}
-
 model Service {
   id           String     @id @default(uuid())
+  name         String
+  price        Decimal    @db.Decimal(10, 2)
   barbershopId String
   barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
-  name         String
   description  String
-  price        Decimal    @db.Decimal(10, 2)
-  imageUrl     String
-  bookings     Booking[]
+  booking      Booking[]
+  userId       String?
+}
+
+model Booking {
+  id           String     @id @default(uuid())
+  userId       String
+  user         User       @relation(fields: [userId], references: [id])
+  serviceId    String
+  service      Service    @relation(fields: [serviceId], references: [id])
+  barbershopId String
+  date         DateTime   @db.Timestamp
+  barbershop   Barbershop @relation(fields: [barbershopId], references: [id])
+  status       String
 }
