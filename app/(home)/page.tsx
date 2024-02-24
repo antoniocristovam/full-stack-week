@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Header from "../_components/header";
+import Header from "../components/header";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 import Search from "./_components/search.ts/search";

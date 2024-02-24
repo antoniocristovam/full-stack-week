@@ -1,7 +1,7 @@
 import React from "react";
-import { Card, CardContent } from "../components/ui/card";
+import { Card, CardContent } from "./ui/card";
 import Image from "next/image";
-import { Button } from "../components/ui/button";
+import { Button } from "./ui/button";
 import { MenuIcon } from "lucide-react";
 
 const Header = () => {
