@@ -10,7 +10,7 @@ export default async function Home() {
   // chamar prisma e pegar barbearias
   // chamar prisma e pegar agendamentos
 
-  // const barbershops = await db.barbershop.findMany({});
+  const barbershops = await db.barbershop.findMany({});
 
   // console.log(barbershops);
 
@@ -37,11 +37,11 @@ export default async function Home() {
         <h2 className="px-5 text-xs uppercase text-gray-400 font-bold mb-3">
           Recomendados
         </h2>
-        {/* <div>
+        <div>
           {barbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
-        </div> */}
+        </div>
       </div>
     </div>
   );
