@@ -10,9 +10,9 @@ export default async function Home() {
   // chamar prisma e pegar barbearias
   // chamar prisma e pegar agendamentos
 
-  const barbershops = await db.barbershop.findMany({});
+  // const barbershops = await db.barbershop.findMany({});
 
-  console.log(barbershops);
+  // console.log(barbershops);
 
   return (
     <div>
