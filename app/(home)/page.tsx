@@ -12,8 +12,6 @@ export default async function Home() {
 
   const barbershops = await db.barbershop.findMany({});
 
-  // console.log(barbershops);
-
   return (
     <div>
       <Header />
@@ -37,7 +35,7 @@ export default async function Home() {
         <h2 className="px-5 text-xs uppercase text-gray-400 font-bold mb-3">
           Recomendados
         </h2>
-        <div>
+        <div className="flex gap-4 px-5 overflow-x-auto [&::-webkit-scrollbar]:hidden">
           {barbershops.map((barbershop) => (
             <BarbershopItem key={barbershop.id} barbershop={barbershop} />
           ))}
