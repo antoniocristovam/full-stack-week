@@ -37,6 +37,7 @@ model Service {
   description  String
   booking      Booking[]
   userId       String?
+  imageUrl     String
 }
 
 model Booking {
