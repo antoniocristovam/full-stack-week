@@ -24,6 +24,7 @@ CREATE TABLE "Service" (
     "barbershopId" TEXT NOT NULL,
     "description" TEXT NOT NULL,
     "userId" TEXT,
+    "imageUrl" TEXT NOT NULL,
 
     CONSTRAINT "Service_pkey" PRIMARY KEY ("id")
 );
